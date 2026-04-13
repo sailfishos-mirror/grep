@@ -46,17 +46,11 @@ LDADD = ../lib/libgreputils.a $(LIBINTL) ../lib/libgreputils.a \
   $(LIBSIGSEGV) $(LIBUNISTRING) $(MBRTOWC_LIB) $(SETLOCALE_NULL_LIB) \
   $(LIBTHREAD)
 
-# The triple-backref test is expected to fail with both the system
-# matcher (i.e., with glibc) and with the included matcher.
-# Both matchers need to be fixed.
-# FIXME-2025: Remove this once the glibc and gnulib bugs are fixed.
-XFAIL_TESTS = triple-backref
-
 # The glibc-infloop test is expected to fail with both the system
 # matcher (i.e., with glibc) and with the included matcher.
 # Both matchers need to be fixed.
 # FIXME-2025: Remove this once the glibc and gnulib bugs are fixed.
-XFAIL_TESTS += glibc-infloop
+XFAIL_TESTS = glibc-infloop
 
 # Equivalence classes are only supported when using the system
 # matcher (which means only with glibc).
@@ -74,6 +68,7 @@ TESTS =						\
   100k-entries					\
   backref					\
   backref-alt					\
+  backref-anchor				\
   backref-multibyte-slow			\
   backref-word					\
   backslash-dot					\

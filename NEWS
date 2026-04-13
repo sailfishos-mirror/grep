@@ -2,6 +2,17 @@ GNU grep NEWS                                    -*- outline -*-
 
 * Noteworthy changes in release ?.? (????-??-??) [?]
 
+** Bug fixes
+
+  grep no longer falsely matches when back-references are combined with
+  optional groups (.?) and the $ anchor.  For example, this no longer
+  falsely reports "ab" as a palindrome:
+    echo ab | grep -E '^(.?)(.?).?\2\1$'
+  Also, without $, valid shorter matches are no longer missed:
+    echo ab | grep -E '^(.?)(.?).?\2\1'
+  now correctly matches (all groups empty, middle .? matches "a").
+  [bugs present since "the beginning"]
+
 
 * Noteworthy changes in release 3.12 (2025-04-10) [stable]
 
