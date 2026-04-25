@@ -35,6 +35,8 @@ AM_SILENT_RULES([yes]) # make --enable-silent-rules the default.
 
 AC_CONFIG_HEADERS([config.h:config.hin])
 
+AC_DEFUN([gl_THREADLIB_DEFAULT_NO])
+
 dnl Checks for programs.
 AC_CANONICAL_HOST
 AC_PROG_AWK
@@ -56,6 +58,18 @@ gl_INIT
 # Ensure VLAs are not used.
 # Note -Wvla is implicitly added by gl_MANYWARN_ALL_GCC
 AC_DEFINE([GNULIB_NO_VLA], [1], [Define to 1 to disable use of VLAs])
+
+# Tell Gnulib to use optimizations for single-threaded programs,
+# in addition to what unlocked-io and wchar-single already do.
+AC_DEFINE([GNULIB_EXCLUDE_SINGLE_THREAD], [1],
+  [Define to 1 as the 'exclude' module's functions
+   are invoked from a single thread.])
+AC_DEFINE([GNULIB_MBRTOWC_SINGLE_THREAD], [1],
+  [Define to 1 as the 'mbrtoc32' and 'regex' modules' functions
+   are invoked from a single thread.])
+AC_DEFINE([GNULIB_REGEX_SINGLE_THREAD], [1],
+  [Define to 1 as the 'regex' module's functions
+   are invoked from a single thread.])
 
 # The test suite needs to know if we have a working perl.
 AM_CONDITIONAL([HAVE_PERL], [test "$gl_cv_prog_perl" != no])

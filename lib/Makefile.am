@@ -29,6 +29,8 @@ include gnulib.mk
 
 AM_CFLAGS += $(GNULIB_WARN_CFLAGS) $(WERROR_CFLAGS)
 
+libgreputils_a_SOURCES += glthread/lock.h
+
 nodist_libgreputils_a_SOURCES = colorize.c
 libgreputils_a_SOURCES += colorize.h
 EXTRA_DIST += colorize-posix.c colorize-w32.c
