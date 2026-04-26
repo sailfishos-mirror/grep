@@ -21,11 +21,6 @@
 require_en_utf8_locale_
 require_compiled_in_MB_support
 
-case $(uname -s) in
-  CYGWIN*)
-    skip_ 'surrogate-pair search string on Cygwin, where it cannot work';;
-esac
-
 fail=0
 
 LC_ALL=en_US.UTF-8

@@ -13,6 +13,11 @@ GNU grep NEWS                                    -*- outline -*-
   now correctly matches (all groups empty, middle .? matches "a").
   [bugs present since "the beginning"]
 
+** Changes in behavior
+
+  On Windows platforms and on AIX in 32-bit mode, grep now fully
+  supports Unicode characters outside the Basic Multilingual Plane.
+
 
 * Noteworthy changes in release 3.12 (2025-04-10) [stable]
 
