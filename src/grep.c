@@ -20,7 +20,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <uchar.h>
-#include <wchar.h>
 #include <inttypes.h>
 #include <stdarg.h>
 #include <stdckdint.h>

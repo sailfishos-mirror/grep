@@ -44,7 +44,7 @@ gl_EARLY
 AC_PROG_RANLIB
 PKG_PROG_PKG_CONFIG([0.9.0], [PKG_CONFIG=false])
 
-# grep never invokes mbrtowc or mbrlen on empty input,
+# grep never invokes mbrtoc32 or mbrlen on empty input,
 # so don't worry about this common bug,
 # as working around it would merely slow grep down.
 gl_cv_func_mbrtowc_empty_input='assume yes'

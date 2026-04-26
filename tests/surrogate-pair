@@ -38,15 +38,8 @@ compare /dev/null out || fail=1
 # This must always match, even on a 16-bit-wchar_t system.
 grep . in > out 2> err || fail=1
 
-# On platforms where wchar_t is only 16 bits, wchar_t cannot represent
-# the character encoded in 'in'.
-
-# On such old systems the above prints nothing on stdout and a diagnostic
-# on stderr.  In that case, return early; otherwise, the following tests
-# would all fail.
 io_pair=$(cat out):$(cat err)
 case $io_pair in
-  :'grep: in: binary file matches') Exit $fail;;
   $s_pair:) ;;
   *) fail_ "unexpected output: $io_pair"; fail=1;;
 esac
