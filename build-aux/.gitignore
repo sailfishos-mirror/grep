@@ -1,4 +1,5 @@
 /announce-gen
+/ar-lib
 /arg-nonnull.h
 /c++defs.h
 /config.guess
@@ -23,4 +24,3 @@
 /useless-if-before-free
 /vc-list-files
 /warn-on-use.h
-/ar-lib
