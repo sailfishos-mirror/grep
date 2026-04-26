@@ -28,6 +28,7 @@ EXTRA_DIST =		\
   THANKS.in		\
   TODO			\
   cfg.mk		\
+  m4/gnulib-cache.m4	\
   thanks-gen
 
 # Shortcut targets to make it easier to run expensive tests.
