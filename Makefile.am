@@ -77,5 +77,5 @@ THANKS: THANKS.in Makefile.am .mailmap thanks-gen
 	  } | $(srcdir)/thanks-gen					\
 	    | LC_ALL=en_US.UTF-8 sort -k1,1;				\
 	  echo;								\
-	  printf ';; %s\n' 'Local Variables:' 'coding: utf-8' End:;	\
+	  printf ';; %s\n' 'Local ''Variables:' 'coding: utf-8' End:;	\
 	} > $@-t && chmod a-w $@-t && mv $@-t $@
