@@ -70,6 +70,9 @@ AC_DEFINE([GNULIB_MBRTOWC_SINGLE_THREAD], [1],
 AC_DEFINE([GNULIB_REGEX_SINGLE_THREAD], [1],
   [Define to 1 as the 'regex' module's functions
    are invoked from a single thread.])
+AC_DEFINE([GNULIB_SIGPROCMASK_SINGLE_THREAD], [1],
+  [Define to 1 if programs call functions like pthread_sigmask, signal,
+   and sigaction from a single thread.])
 
 # The test suite needs to know if we have a working perl.
 AM_CONDITIONAL([HAVE_PERL], [test "$gl_cv_prog_perl" != no])
