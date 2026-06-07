@@ -316,7 +316,7 @@ Pexecute (void *vcp, char const *buf, idx_t size, idx_t *match_size,
 
           e = jit_exec (pc, subject, line_end - subject,
                         search_offset, options);
-          if (MATCH_INVALID_UTF || !bad_utf8_from_pcre2 (e))
+          if (MATCH_INVALID_UTF != 0 || !bad_utf8_from_pcre2 (e))
             break;
 
           idx_t valid_bytes = pcre2_get_startchar (pc->data);
